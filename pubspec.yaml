@@ -88,3 +88,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+  fonts:
+    - family: Rakkas
+      fonts:
+      - asset: fonts/Rakkas-Regular.ttf
+    - family: ReemKufi
+      fonts:
+        - asset: fonts/Reem_Kufi/static/ReemKufi-Regular.ttf
+        - asset: fonts/Reem_Kufi/static/ReemKufi-Medium.ttf
+          style: italic
