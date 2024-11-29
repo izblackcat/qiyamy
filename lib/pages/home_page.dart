@@ -28,24 +28,24 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: GridView.builder(
-          itemCount: 13,
+          itemCount: 60,
           gridDelegate:
               SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
           itemBuilder: (context, index) => GridItem(
-                hizbNumber: alAhzab[index][0],
-                hizbTitle: alAhzab[index][1],
+                hizbNumber: (index + 1).toString(),
+                hizbTitle: alAhzab[index],
               )),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           onTap: null,
           selectedItemColor: mainColor,
-          selectedLabelStyle: TextStyle(fontFamily: "Rakkas", fontSize: 16),
-          unselectedLabelStyle: TextStyle(fontFamily: "Rakkas", fontSize: 16),
+          selectedLabelStyle: TextStyle(fontFamily: "ReemKufi", fontSize: 16),
+          unselectedLabelStyle: TextStyle(fontFamily: "ReemKufi", fontSize: 16),
           type: BottomNavigationBarType.fixed,
           iconSize: 30,
           items: [
             BottomNavigationBarItem(
-                tooltip: "الأحزاب و الأجزاء",
+                tooltip: "لائحة الأحزاب والأجزاء",
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: Icon(Icons.menu_book),

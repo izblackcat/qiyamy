@@ -13,9 +13,9 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(8),
+        margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: thirdColor),
+            borderRadius: BorderRadius.circular(16), color: fourthColor),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
