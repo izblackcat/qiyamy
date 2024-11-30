@@ -27,8 +27,9 @@ class GridItem extends StatelessWidget {
               ),
               Text(
                 hizbTitle,
+                softWrap: true,
                 style: TextStyle(
-                    fontFamily: 'ReemKufi', color: mainColor, fontSize: 16),
+                    fontFamily: 'ReemKufi', color: mainColor, fontSize: 15),
                 textAlign: TextAlign.center,
               )
             ],
