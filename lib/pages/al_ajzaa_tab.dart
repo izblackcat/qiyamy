@@ -4,15 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:qiyamy/utils/al_ahzab.dart';
 import 'package:qiyamy/utils/grid_item.dart';
 
-class AlAjzaaPage extends StatelessWidget {
-  AlAjzaaPage({super.key});
+class AlAjzaaTab extends StatelessWidget {
+  AlAjzaaTab({super.key});
 
   List alAhzab = getAlAhzabList();
-
-  // final filteredList = alAhzab.asMap().entries
-  //   .where((entry) => entry.key % 2 != 0)
-  //   .map((entry) => entry.value)
-  //   .toList();
 
   @override
   Widget build(BuildContext context) {
