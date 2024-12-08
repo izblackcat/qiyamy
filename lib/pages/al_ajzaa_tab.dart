@@ -7,13 +7,13 @@ import 'package:qiyamy/utils/grid_item.dart';
 class AlAjzaaTab extends StatelessWidget {
   AlAjzaaTab({super.key});
 
-  List alAhzab = getAlAhzabList();
+  Map alAhzab = getHizbsMap();
 
   @override
   Widget build(BuildContext context) {
 
-    final alAjzaa = alAhzab.asMap().entries
-    .where((entry) => entry.key % 2 == 0)
+    final alAjzaa = alAhzab.entries
+    .where((entry) => entry.key % 2 != 0)
     .map((entry) => entry.value)
     .toList();
 
@@ -23,8 +23,8 @@ class AlAjzaaTab extends StatelessWidget {
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
         itemBuilder: (context, index) =>  GridItem(
-            hizbNumber: (index + 1).toString(),
-            hizbTitle: alAjzaa[index],
+            hizbNumber: (index+1).toString(),
+            hizbTitle: alAjzaa[index]['short'],
           )
         );
   }

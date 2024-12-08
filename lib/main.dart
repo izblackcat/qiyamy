@@ -5,6 +5,7 @@ import 'package:qiyamy/pages/home_page.dart';
 import 'package:qiyamy/pages/more_page.dart';
 import 'package:qiyamy/pages/qiyami_page.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Directionality(textDirection: TextDirection.rtl, child: HomePage()),
+      home: const Directionality(
+          textDirection: TextDirection.rtl, child: HomePage()),
       routes: {
         '/homepage': (context) => const HomePage(),
         '/alahzabpage': (context) => const AlAhzabPage(),
