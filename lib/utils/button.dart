@@ -1,15 +1,19 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:qiyamy/utils/colors.dart';
 
 class Button extends StatelessWidget {
   final String buttonText;
   final Color buttonColor;
+  final Color textColor;
   final void Function()? onPressedFunc;
 
   const Button(
-      {super.key, required this.buttonText, required this.buttonColor, required this.onPressedFunc});
+      {super.key,
+      required this.buttonText,
+      required this.buttonColor,
+      required this.textColor,
+      required this.onPressedFunc});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +23,10 @@ class Button extends StatelessWidget {
         onPressed: onPressedFunc,
         child: Text(buttonText,
             style: TextStyle(
-                fontFamily: 'ReemKufi', fontSize: 20, color: mainColor)),
+                fontFamily: 'ReemKufi', fontSize: 20, color: textColor)),
         style: ButtonStyle(
-            padding:
-                WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 70)),
             backgroundColor: WidgetStatePropertyAll(buttonColor),
+            fixedSize: WidgetStatePropertyAll(Size(180, 20)),
             shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0),

@@ -7,7 +7,7 @@ import 'package:qiyamy/utils/grid_item.dart';
 class AlAhzabTab extends StatelessWidget {
   AlAhzabTab({super.key});
 
-  Map alAhzab = getHizbsMap();
+  Map alAhzab = getAlAhzabMap();
 
   @override
   Widget build(BuildContext context) {

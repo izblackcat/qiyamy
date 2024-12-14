@@ -35,6 +35,8 @@ Home page mockup:
 
 ## Qiyam page
 
-Qiyam page mockup:
+Qiyam page mockups:
 
-![Qiyam page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyam.png?raw=true)
+![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage.png?raw=true)
+
+![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage2.png?raw=true)

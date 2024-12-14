@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:qiyamy/pages/al_ahzab_page.dart';
 import 'package:qiyamy/pages/al_wird_page.dart';
 import 'package:qiyamy/pages/home_page.dart';
 import 'package:qiyamy/pages/more_page.dart';
-import 'package:qiyamy/pages/qiyami_page.dart';
+import 'package:qiyamy/pages/qiyam_page.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  await Hive.initFlutter();
+
+  // ignore: unused_local_variable
+  var alAhzabBox = await Hive.openBox("alAhzabBox");
+
   runApp(const MyApp());
 }
 
@@ -27,7 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/homepage': (context) => const HomePage(),
         '/alahzabpage': (context) => const AlAhzabPage(),
-        '/qiyamipage': (context) => const QiyamiPage(),
+        '/qiyamipage': (context) => const QiyamPage(),
         '/wirdpage': (context) => const AlWirdPage(),
         '/morepage': (context) => const MorePage(),
       },

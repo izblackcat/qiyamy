@@ -14,17 +14,17 @@ class QiyamService {
           textAlign: TextAlign.center,
           message,
           style: const TextStyle(
-            fontSize: 16.0,
-            fontFamily: "ReemKufi",
+            fontSize: 18.0,
+            fontFamily: "Rakkas",
           ),
         ),
-        duration: const Duration(seconds: 2),
+        duration: const Duration(seconds: 1),
       ),
     );
   }
 
   String getDate2() {
-    initializeDateFormatting("ar_MO", null);
+    initializeDateFormatting("ar_SA", null);
 
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('d MMMM y', 'ar_MO').format(now);

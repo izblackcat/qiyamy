@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:qiyamy/pages/al_ahzab_page.dart';
 import 'package:qiyamy/pages/al_wird_page.dart';
 import 'package:qiyamy/pages/more_page.dart';
-import 'package:qiyamy/pages/qiyami_page.dart';
+import 'package:qiyamy/pages/qiyam_page.dart';
 import 'package:qiyamy/utils/colors.dart';
 // import 'package:qiyamy/utils/grid_item.dart';
 
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   final List _pages = [
     AlAhzabPage(),
-    QiyamiPage(),
+    QiyamPage(),
     AlWirdPage(),
     MorePage()
   ];
