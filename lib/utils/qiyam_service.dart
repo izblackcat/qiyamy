@@ -23,7 +23,7 @@ class QiyamService {
     );
   }
 
-  String getDate2() {
+  String todayDate() {
     initializeDateFormatting("ar_SA", null);
 
     DateTime now = DateTime.now();

@@ -33,10 +33,8 @@ Home page mockup:
 ![Home page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/homepage.png?raw=true)
 
 
-## Qiyam page
+## Wird page
 
-Qiyam page mockups:
+Wird page mockup:
 
-![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage.png?raw=true)
-
-![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage2.png?raw=true)
+![Wird page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/wirdpage.png?raw=true)

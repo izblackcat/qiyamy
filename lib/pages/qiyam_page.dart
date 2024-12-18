@@ -20,7 +20,7 @@ class QiyamPage extends StatefulWidget {
 }
 
 class _QiyamPageState extends State<QiyamPage> {
-  var _alAhzabBox;
+  Box? _alAhzabBox;
 
   QiyamiDatabase qiyamiDB = QiyamiDatabase();
 
@@ -38,7 +38,7 @@ class _QiyamPageState extends State<QiyamPage> {
   void initState() {
     _alAhzabBox = Hive.box("alAhzabBox");
 
-    if (_alAhzabBox.get("alAhzabList") == null) {
+    if (_alAhzabBox!.get("alAhzabList") == null) {
       qiyamiDB.createInitialAhzab();
     } else {
       qiyamiDB.loadAlAhzab();
