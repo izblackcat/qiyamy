@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qiyamy/utils/al_ahzab.dart';
 import 'package:qiyamy/utils/button.dart';
 import 'package:qiyamy/utils/colors.dart';
+import 'package:qiyamy/utils/finish_greeting.dart';
 import 'package:qiyamy/utils/qiyam_service.dart';
 import 'package:qiyamy/utils/wird_box.dart';
 
@@ -25,14 +26,16 @@ class _AlWirdPageState extends State<AlWirdPage> {
     super.initState();
   }
 
-  // TODO: this works, but needs to be incremented sequantially
-  // because it gives the same result for day = 31 and day = 1
   void getDailyWird() {
-    // int day = DateTime.now().day; // [1, 31]
-    int day = 1;
-    int i = (day != 30) ? day % 30 : day;
-    _firstHizbIndex = 2 * i - 1;
-    _secondHizbIndex = 2 * i;
+    const int totalHizbs = 60;
+
+    final int daysSinceStart =
+        DateTime.now().difference(DateTime(2024, 12, 1)).inDays;
+
+    final int dayInCycle = daysSinceStart % (totalHizbs ~/ 2);
+
+    _firstHizbIndex = 2 * dayInCycle + 1;
+    _secondHizbIndex = 2 * dayInCycle + 2;
   }
 
   @override
@@ -107,8 +110,12 @@ class _AlWirdPageState extends State<AlWirdPage> {
             buttonColor: secondColor,
             textColor: Colors.white,
             onPressedFunc: () {
-              getDailyWird();
               // qiyamService.showSnackbar(context, "أحسنت. تقبل الله منكم");
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const FinishGreeting();
+                  });
             }),
         Button(
             buttonText: "ليس بعد",
