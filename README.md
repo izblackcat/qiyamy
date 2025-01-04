@@ -12,14 +12,14 @@ The mockup of the app that were built using Figma are as follows:
 
 Colors used in the app:
 
-- Navy Blue #05445e
-- Blue Grotto #189ab4
-- Blue Green #75e6da
-- Baby Blue #d4f1f4
+- Navy Blue `#05445e`
+- Blue Grotto `#189ab4`
+- Blue Green `#75e6da`
+- Baby Blue `#d4f1f4`
 
 ![Color palette](https://github.com/izblackcat/qiyami/blob/main/mockups/colorpalette.png?raw=true)
 
-From (Canva Color Palettes)[https://www.canva.com/colors/color-palettes/summer-splash/] :blue_heart:
+From ![Canva Color Palettes](https://www.canva.com/colors/color-palettes/summer-splash/) :blue_heart:
 
 ## Splash screen
 
@@ -32,6 +32,14 @@ Splash screen mockup:
 Home page mockup:
 
 ![Home page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/homepage.png?raw=true)
+
+## Qiyam page
+
+Qiyam page mockups:
+
+![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage.png?raw=true)
+
+![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage2.png?raw=true)
 
 ## Wird page
 
