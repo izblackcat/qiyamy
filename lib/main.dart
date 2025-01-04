@@ -4,7 +4,7 @@ import 'package:qiyamy/pages/al_ahzab_page.dart';
 import 'package:qiyamy/pages/al_wird_page.dart';
 import 'package:qiyamy/pages/home_page.dart';
 import 'package:qiyamy/pages/more_page.dart';
-import 'package:qiyamy/pages/qiyam_page.dart';
+import 'package:qiyamy/pages/al_qiyam_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/homepage': (context) => const HomePage(),
         '/alahzabpage': (context) => const AlAhzabPage(),
-        '/qiyampage': (context) => const QiyamPage(),
-        '/wirdpage': (context) => const AlWirdPage(),
+        '/alqiyampage': (context) => const AlQiyamPage(),
+        '/alwirdpage': (context) => const AlWirdPage(),
         '/morepage': (context) => const MorePage(),
       },
     );

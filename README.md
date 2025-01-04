@@ -4,13 +4,12 @@ A new Flutter project.
 
 ## Getting Started
 
-
 # qiyami
-
 
 The mockup of the app that were built using Figma are as follows:
 
-## Color palette:
+## Color palette: Summer Splash
+
 Colors used in the app:
 
 - Navy Blue #05445e
@@ -20,18 +19,19 @@ Colors used in the app:
 
 ![Color palette](https://github.com/izblackcat/qiyami/blob/main/mockups/colorpalette.png?raw=true)
 
+From (Canva Color Palettes)[https://www.canva.com/colors/color-palettes/summer-splash/] :blue_heart:
 
 ## Splash screen
+
 Splash screen mockup:
 
 ![Splash screen mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/splashscreen.png?raw=true)
 
-
 ## Home page
+
 Home page mockup:
 
 ![Home page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/homepage.png?raw=true)
-
 
 ## Wird page
 

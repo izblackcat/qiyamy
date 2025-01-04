@@ -12,14 +12,14 @@ import 'package:qiyamy/utils/colors.dart';
 import 'package:qiyamy/utils/grid_item.dart';
 import 'package:qiyamy/utils/qiyam_service.dart';
 
-class QiyamPage extends StatefulWidget {
-  const QiyamPage({super.key});
+class AlQiyamPage extends StatefulWidget {
+  const AlQiyamPage({super.key});
 
   @override
-  State<QiyamPage> createState() => _QiyamPageState();
+  State<AlQiyamPage> createState() => _AlQiyamPageState();
 }
 
-class _QiyamPageState extends State<QiyamPage> {
+class _AlQiyamPageState extends State<AlQiyamPage> {
   Box? _alAhzabBox;
 
   QiyamiDatabase qiyamiDB = QiyamiDatabase();
@@ -58,7 +58,6 @@ class _QiyamPageState extends State<QiyamPage> {
     if (qiyamiDB.alAhzabList.length == hizbsMap.length) {
       qiyamService.showSnackbar(
           context, "لقد تم الإنتهاء من جميع الأحزاب, سيتم البدء من جديد.");
-      // _choosenHizbsIndexes = [];
       qiyamiDB.alAhzabList = [];
       qiyamiDB.updateAlAhzab();
     }
@@ -117,7 +116,9 @@ class _QiyamPageState extends State<QiyamPage> {
             child: Padding(
               padding: const EdgeInsets.only(right: 30.0),
               child: Text(
-                "لقد اخترنا لك الحزب رقم :",
+                _radnomHizbNumber != 0
+                    ? "لقد اخترنا لك الحزب رقم :"
+                    : 'رجاءً قم بالضغط على زر "اختر لي" أسفله للبدء :',
                 style: TextStyle(
                     fontFamily: 'ReemKufi', fontSize: 20, color: mainColor),
               ),
@@ -136,39 +137,10 @@ class _QiyamPageState extends State<QiyamPage> {
                     child: CircularProgressIndicator(
                     color: mainColor,
                   ))
-                : Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Text((_radnomHizbNumber + 1).toString(),
-                            style: TextStyle(
-                                fontFamily: 'Rakkas',
-                                fontSize: 32,
-                                color: mainColor)),
-                      ),
-                      Spacer(),
-                      Flexible(
-                        flex: 6,
-                        fit: FlexFit.loose,
-                        child: Text(hizbsMap[_radnomHizbNumber + 1]['long'],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'ReemKufi',
-                                fontSize: 20,
-                                color: mainColor)),
-                      ),
-                      Spacer(),
-                      Expanded(
-                        flex: 1,
-                        child: Text(
-                            "سورة ${hizbsMap[_radnomHizbNumber + 1]['surat']}",
-                            style: TextStyle(
-                                fontFamily: 'Rakkas',
-                                fontSize: 18,
-                                color: mainColor)),
-                      ),
-                    ],
+                : Center(
+                    child: _radnomHizbNumber == 0
+                        ? qiyamService.buildShimmerPlaceholder()
+                        : qiyamService.buildQiyamColumn(_radnomHizbNumber),
                   ),
           ),
           SizedBox(

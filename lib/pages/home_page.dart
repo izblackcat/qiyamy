@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qiyamy/pages/al_ahzab_page.dart';
 import 'package:qiyamy/pages/al_wird_page.dart';
 import 'package:qiyamy/pages/more_page.dart';
-import 'package:qiyamy/pages/qiyam_page.dart';
+import 'package:qiyamy/pages/al_qiyam_page.dart';
 import 'package:qiyamy/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentPageIndex = 0;
 
-  final List _pages = [const AlAhzabPage(), const QiyamPage(), const AlWirdPage(), const MorePage()];
+  final List _pages = [const AlAhzabPage(), const AlQiyamPage(), const AlWirdPage(), const MorePage()];
 
   void _setCurrentPageIndex(int index) {
     setState(() {

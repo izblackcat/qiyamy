@@ -6,6 +6,7 @@ class QiyamiDatabase {
   var alAhzabBox = Hive.box("alAhzabBox");
 
   void createInitialAhzab() {
+    // alAhzabList = [32, 1, 29, 34, 2, 0, 24, 12, 13, 10, 18];
     alAhzabList = [];
   }
 
