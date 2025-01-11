@@ -47,3 +47,9 @@ Qiyam page mockups:
 Wird page mockup:
 
 ![Wird page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/wirdpage.png?raw=true)
+
+### More page
+
+More page mockup:
+
+![More page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/morepage.png?raw=true)
