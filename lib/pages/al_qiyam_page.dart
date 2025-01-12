@@ -10,7 +10,7 @@ import 'package:qiyamy/utils/al_ahzab.dart';
 import 'package:qiyamy/utils/button.dart';
 import 'package:qiyamy/utils/colors.dart';
 import 'package:qiyamy/utils/grid_item.dart';
-import 'package:qiyamy/utils/qiyam_service.dart';
+import 'package:qiyamy/services/qiyam_service.dart';
 
 class AlQiyamPage extends StatefulWidget {
   const AlQiyamPage({super.key});

@@ -3,7 +3,7 @@ import 'package:qiyamy/utils/al_ahzab.dart';
 import 'package:qiyamy/utils/button.dart';
 import 'package:qiyamy/utils/colors.dart';
 import 'package:qiyamy/utils/finish_greeting.dart';
-import 'package:qiyamy/utils/qiyam_service.dart';
+import 'package:qiyamy/services/qiyam_service.dart';
 import 'package:qiyamy/utils/wird_box.dart';
 
 class AlWirdPage extends StatefulWidget {
