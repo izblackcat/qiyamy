@@ -22,7 +22,10 @@ class MorePage extends StatelessWidget {
         height: 10,
       ),
       for (var setting in settingsService.mainSettings)
-        SettingItem(icon: setting['icon'], name: setting['name']),
+        SettingItem(
+            icon: setting['icon'],
+            name: setting['name'],
+            route: setting['route']),
       const SizedBox(
         height: 10,
       ),
@@ -36,7 +39,11 @@ class MorePage extends StatelessWidget {
         height: 10,
       ),
       for (var setting in settingsService.otherSettings)
-        SettingItem(icon: setting['icon'], name: setting['name']),
+        SettingItem(
+          icon: setting['icon'],
+          name: setting['name'],
+          route: setting['route'],
+        ),
     ]));
   }
 }

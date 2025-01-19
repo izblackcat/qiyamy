@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, avoid_print, prefer_interpolation_to_compose_strings
-
-import 'dart:math';
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, avoid_print, prefer_interpolation_to_compose_strings, unnecessary_brace_in_string_interps
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -29,10 +27,11 @@ class _AlQiyamPageState extends State<AlQiyamPage> {
   var qiyamService = QiyamService();
 
   int _radnomHizbNumber = 0;
-  static const int max = 37;
 
   bool isLoading = false;
   bool isHizbChoosen = false;
+
+  bool isQiyamAhzabEmpty = false;
 
   @override
   void initState() {
@@ -40,8 +39,10 @@ class _AlQiyamPageState extends State<AlQiyamPage> {
 
     if (_alAhzabBox!.get("alAhzabList") == null) {
       qiyamiDB.createInitialAhzab();
+      isQiyamAhzabEmpty = true;
     } else {
       qiyamiDB.loadAlAhzab();
+      isQiyamAhzabEmpty = false;
     }
     super.initState();
   }
@@ -51,41 +52,31 @@ class _AlQiyamPageState extends State<AlQiyamPage> {
       isLoading = true;
     });
 
-    await Future.delayed(Duration(seconds: 2));
-
-    int randomNumber = Random().nextInt(max);
-
-    if (qiyamiDB.alAhzabList.length == hizbsMap.length) {
-      qiyamService.showSnackbar(
-          context, "لقد تم الإنتهاء من جميع الأحزاب, سيتم البدء من جديد.");
-      qiyamiDB.alAhzabList = [];
-      qiyamiDB.updateAlAhzab();
-    }
-
-    while (qiyamiDB.alAhzabList.contains(randomNumber)) {
-      randomNumber = Random().nextInt(max);
-    }
+    await Future.delayed(Duration(seconds: 1));
 
     setState(() {
-      _radnomHizbNumber = randomNumber;
+      _radnomHizbNumber = QiyamService().chooseRandomHizb(context);
+      List qiyamAhzab = qiyamiDB.loadAlAhzab();
+      isQiyamAhzabEmpty = qiyamAhzab.isEmpty;
       isLoading = false;
       isHizbChoosen = true;
-      qiyamService.showSnackbar(
-          context, "تم اختيار الحزب  ${_radnomHizbNumber + 1}");
+      if (_radnomHizbNumber != 0) {
+        qiyamService.showSnackbar(
+            context, "تم اختيار الحزب  ${_radnomHizbNumber}");
+      }
     });
   }
 
   void _acceptChoosenHizb() {
-    if (!qiyamiDB.alAhzabList.contains(_radnomHizbNumber)) {
+    List qiyamAhzab = qiyamiDB.loadAlAhzab();
+
+    if (!qiyamAhzab.contains(_radnomHizbNumber)) {
       setState(() {
-        qiyamiDB.alAhzabList.add(_radnomHizbNumber);
-
+        qiyamiDB.qiyamAhzabList.add(_radnomHizbNumber);
         qiyamiDB.updateAlAhzab();
-
-        print(qiyamiDB.alAhzabList.length);
-
+        isQiyamAhzabEmpty = qiyamiDB.qiyamAhzabList.isEmpty;
         qiyamService.showSnackbar(
-            context, "تمت إضافة الحزب  ${_radnomHizbNumber + 1}  تقبل الله");
+            context, "تمت إضافة الحزب  ${_radnomHizbNumber}  تقبل الله");
       });
     } else {
       qiyamService.showSnackbar(context, "تمت إضافة الحزب مسبقا !");
@@ -163,8 +154,9 @@ class _AlQiyamPageState extends State<AlQiyamPage> {
               )
             ],
           ),
-          qiyamiDB.alAhzabList.isNotEmpty
-              ? Column(
+          isQiyamAhzabEmpty
+              ? SizedBox()
+              : Column(
                   children: [
                     Divider(
                       color: mainColor,
@@ -180,21 +172,20 @@ class _AlQiyamPageState extends State<AlQiyamPage> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 3,
                       ),
-                      itemCount:
-                          qiyamiDB.alAhzabList.length, // Number of grid items
+                      itemCount: qiyamiDB
+                          .qiyamAhzabList.length, // Number of grid items
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) => GridItem(
-                        hizbNumber: hizbsMap[qiyamiDB.alAhzabList[index] + 1]
+                        hizbNumber: hizbsMap[qiyamiDB.qiyamAhzabList[index]]
                                 ['number']
                             .toString(),
-                        hizbTitle: hizbsMap[qiyamiDB.alAhzabList[index] + 1]
+                        hizbTitle: hizbsMap[qiyamiDB.qiyamAhzabList[index]]
                             ['short'],
                       ),
                     ),
                   ],
                 )
-              : SizedBox()
         ],
       ),
     ]));

@@ -6,20 +6,38 @@ class SettingsService {
   SettingsService._internal();
 
   List mainSettings = [
-    {'icon': FontAwesomeIcons.solidHandPointer, 'name': 'أحزاب قيام الليل'},
+    {
+      'icon': FontAwesomeIcons.solidHandPointer,
+      'name': 'أحزاب قيام الليل',
+      'route': '/choose_hizbs'
+    },
     {
       'icon': FontAwesomeIcons.solidClipboard,
-      'name': 'طريقة اختيار حزب القيام'
+      'name': 'طريقة اختيار حزب القيام',
+      'route': '/homepage'
     },
-    {'icon': FontAwesomeIcons.solidMoon, 'name': 'مظهر التطبيق'},
+    {
+      'icon': FontAwesomeIcons.solidMoon,
+      'name': 'مظهر التطبيق',
+      'route': '/homepage'
+    },
   ];
 
   List otherSettings = [
-    {'icon': FontAwesomeIcons.shareNodes, 'name': 'شارك تطبيق قيامي'},
+    {
+      'icon': FontAwesomeIcons.shareNodes,
+      'name': 'شارك تطبيق قيامي',
+      'route': '/homepage'
+    },
     {
       'icon': FontAwesomeIcons.solidStar,
-      'name': 'قم بتقييمنا على متجر التطبيقات'
+      'name': 'قم بتقييمنا على متجر التطبيقات',
+      'route': '/homepage'
     },
-    {'icon': FontAwesomeIcons.solidHeart, 'name': 'قم بمتابعتنا'},
+    {
+      'icon': FontAwesomeIcons.solidHeart,
+      'name': 'قم بمتابعتنا',
+      'route': '/homepage'
+    },
   ];
 }

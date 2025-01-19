@@ -1,5 +1,11 @@
+// ignore_for_file: unused_local_variable, unused_import, prefer_interpolation_to_compose_strings, avoid_print
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:qiyamy/data/database.dart';
 import 'package:qiyamy/utils/al_ahzab.dart';
 import 'package:qiyamy/utils/colors.dart';
 import 'package:intl/intl.dart';
@@ -7,6 +13,12 @@ import 'package:qiyamy/utils/shimmer_box.dart';
 import 'package:shimmer/shimmer.dart';
 
 class QiyamService {
+  static final QiyamService _instance = QiyamService._internal();
+  factory QiyamService() => _instance;
+  QiyamService._internal();
+
+  static final QiyamiDatabase database = QiyamiDatabase();
+
   void showSnackbar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -107,7 +119,7 @@ class QiyamService {
       children: [
         Expanded(
           flex: 1,
-          child: Text((hizbNumber + 1).toString(),
+          child: Text((hizbNumber).toString(),
               style: const TextStyle(
                   fontFamily: 'Rakkas', fontSize: 32, color: mainColor)),
         ),
@@ -115,7 +127,7 @@ class QiyamService {
         Flexible(
           flex: 6,
           fit: FlexFit.loose,
-          child: Text(hizbsMap[hizbNumber + 1]['long'],
+          child: Text(hizbsMap[hizbNumber]['long'],
               textAlign: TextAlign.center,
               style: const TextStyle(
                   fontFamily: 'ReemKufi', fontSize: 20, color: mainColor)),
@@ -123,11 +135,89 @@ class QiyamService {
         const Spacer(),
         Expanded(
           flex: 1,
-          child: Text("سورة ${hizbsMap[hizbNumber + 1]['surat']}",
+          child: Text("سورة ${hizbsMap[hizbNumber]['surat']}",
               style: const TextStyle(
                   fontFamily: 'Rakkas', fontSize: 18, color: mainColor)),
         ),
       ],
     );
+  }
+
+  setChoosenHizbs(Set<int> hizbs) {
+    var memorizedAhzabBox = Hive.box("memorizedAhzab");
+
+    List choosenHizbs = [];
+
+    for (int hizb in hizbs) {
+      choosenHizbs.add(hizb + 1);
+    }
+
+    database.updateMemorizedHizbs(choosenHizbs);
+  }
+
+  int chooseRandomHizb(BuildContext context) {
+    var memorizedAhzabBox = Hive.box("memorizedAhzab");
+
+    // load qiyam ahzab that exist already if there's any:
+    List qiyamAhzab = database.loadAlAhzab();
+
+    // if there's nothing initialize the list -> = []:
+    if (qiyamAhzab.isEmpty) {
+      database.createInitialAhzab();
+      qiyamAhzab = database.loadAlAhzab();
+    }
+
+    List memorizedAhzab = database.loadMemorizedHizbs();
+
+    int randomNumber = 0;
+
+    if (memorizedAhzab.isNotEmpty) {
+      randomNumber = memorizedAhzab[Random().nextInt(memorizedAhzab.length)];
+
+      print("*******************************************");
+
+      if (qiyamAhzab.length == memorizedAhzab.length) {
+        print("qiyamAhzab.length == memorizedAhzab.length");
+        print(qiyamAhzab.length == memorizedAhzab.length);
+
+        showSnackbar(
+            context, "لقد تم الإنتهاء من جميع الأحزاب, سيتم البدء من جديد.");
+        database.createInitialAhzab();
+        database.updateAlAhzab();
+        // qiyamAhzab = database.loadAlAhzab();
+        return 0;
+      }
+
+      print("memorized ahzab");
+      print(memorizedAhzab);
+      print("______________");
+      print("qiyam ahzab");
+      print(qiyamAhzab);
+      print("______________");
+      print("random number : ");
+      print(randomNumber);
+      print("______________");
+      print("qiyamAhzab.contains(randomNumber + 1) :");
+      print(qiyamAhzab.contains(randomNumber));
+
+      while (qiyamAhzab.contains(randomNumber) &&
+          qiyamAhzab.length != memorizedAhzab.length) {
+        randomNumber = memorizedAhzab[Random().nextInt(memorizedAhzab.length)];
+      }
+    } else {
+      randomNumber = Random().nextInt(60) + 1;
+    }
+
+    // if (qiyamAhzab.length == hizbsMap.length) {
+    //   showSnackbar(
+    //       context, "لقد تم الإنتهاء من جميع الأحزاب, سيتم البدء من جديد.");
+    //   database.createInitialAhzab();
+    //   database.updateAlAhzab();
+    // }
+
+    print("?????? random choosen : ???");
+    print(randomNumber);
+
+    return randomNumber;
   }
 }

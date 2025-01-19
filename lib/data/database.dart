@@ -1,20 +1,55 @@
+// ignore_for_file: avoid_print
+
 import 'package:hive_flutter/hive_flutter.dart';
 
 class QiyamiDatabase {
-  List alAhzabList = [];
+  // all hizbs :
+
+  List qiyamAhzabList = [];
 
   var alAhzabBox = Hive.box("alAhzabBox");
+  var memorizedAhzabBox = Hive.box("memorizedAhzab");
 
-  void createInitialAhzab() {
-    // alAhzabList = [32, 1, 29, 34, 2, 0, 24, 12, 13, 10, 18];
-    alAhzabList = [];
+  List getAlAhzabList() {
+    return qiyamAhzabList;
   }
 
-  void loadAlAhzab() {
-    alAhzabList = alAhzabBox.get("alAhzabList");
+  void createInitialAhzab() {
+    qiyamAhzabList = [];
+  }
+
+  List loadAlAhzab() {
+    // qiyamAhzabList = alAhzabBox.get("alAhzabList");
+    if (alAhzabBox.get("alAhzabList") != null) {
+      qiyamAhzabList = alAhzabBox.get("alAhzabList");
+    } else {
+      qiyamAhzabList = [];
+    }
+    return qiyamAhzabList;
   }
 
   void updateAlAhzab() {
-    alAhzabBox.put("alAhzabList", alAhzabList);
+    alAhzabBox.put("alAhzabList", qiyamAhzabList);
+  }
+
+  // memorized hizbs :
+
+  List memorizedHizbs = [];
+
+  void createInitialMemorizedHizbs() {
+    memorizedHizbs = [];
+  }
+
+  List loadMemorizedHizbs() {
+    if (memorizedAhzabBox.get("memorizedAhzab") != null) {
+      memorizedHizbs = memorizedAhzabBox.get("memorizedAhzab");
+    } else {
+      memorizedHizbs = [];
+    }
+    return memorizedHizbs;
+  }
+
+  void updateMemorizedHizbs(List ahzab) {
+    memorizedAhzabBox.put("memorizedAhzab", ahzab);
   }
 }

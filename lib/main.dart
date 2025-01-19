@@ -5,16 +5,32 @@ import 'package:qiyamy/pages/al_wird_page.dart';
 import 'package:qiyamy/pages/home_page.dart';
 import 'package:qiyamy/pages/more_page.dart';
 import 'package:qiyamy/pages/al_qiyam_page.dart';
+import 'package:qiyamy/pages/settings/choose_memorized_hizbs_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
 
-  // ignore: unused_local_variable
-  var alAhzabBox = await Hive.openBox("alAhzabBox");
+  await initializeBoxes();
+
+  checkBoxes();
 
   runApp(const MyApp());
+}
+
+void checkBoxes() {
+  print('__________________________');
+  if (Hive.isBoxOpen('alAhzabBox') && Hive.isBoxOpen('memorizedAhzab')) {
+    print('All boxes are open');
+  } else {
+    print('One or more boxes are not open');
+  }
+}
+
+Future<void> initializeBoxes() async {
+  await Hive.openBox("alAhzabBox");
+  await Hive.openBox("memorizedAhzab");
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/alqiyampage': (context) => const AlQiyamPage(),
         '/alwirdpage': (context) => const AlWirdPage(),
         '/morepage': (context) => const MorePage(),
+        '/choose_hizbs': (context) => const ChooseMemorizedHizbsPage(),
       },
     );
   }
