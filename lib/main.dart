@@ -14,19 +14,17 @@ void main() async {
 
   await initializeBoxes();
 
-  checkBoxes();
-
   runApp(const MyApp());
 }
 
-void checkBoxes() {
-  print('__________________________');
-  if (Hive.isBoxOpen('alAhzabBox') && Hive.isBoxOpen('memorizedAhzab')) {
-    print('All boxes are open');
-  } else {
-    print('One or more boxes are not open');
-  }
-}
+// void checkBoxes() {
+//   print('__________________________');
+//   if (Hive.isBoxOpen('alAhzabBox') && Hive.isBoxOpen('memorizedAhzab')) {
+//     print('All boxes are open');
+//   } else {
+//     print('One or more boxes are not open');
+//   }
+// }
 
 Future<void> initializeBoxes() async {
   await Hive.openBox("alAhzabBox");

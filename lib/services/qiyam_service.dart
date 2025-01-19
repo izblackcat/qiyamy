@@ -174,31 +174,13 @@ class QiyamService {
     if (memorizedAhzab.isNotEmpty) {
       randomNumber = memorizedAhzab[Random().nextInt(memorizedAhzab.length)];
 
-      print("*******************************************");
-
       if (qiyamAhzab.length == memorizedAhzab.length) {
-        print("qiyamAhzab.length == memorizedAhzab.length");
-        print(qiyamAhzab.length == memorizedAhzab.length);
-
         showSnackbar(
             context, "لقد تم الإنتهاء من جميع الأحزاب, سيتم البدء من جديد.");
         database.createInitialAhzab();
         database.updateAlAhzab();
-        // qiyamAhzab = database.loadAlAhzab();
         return 0;
       }
-
-      print("memorized ahzab");
-      print(memorizedAhzab);
-      print("______________");
-      print("qiyam ahzab");
-      print(qiyamAhzab);
-      print("______________");
-      print("random number : ");
-      print(randomNumber);
-      print("______________");
-      print("qiyamAhzab.contains(randomNumber + 1) :");
-      print(qiyamAhzab.contains(randomNumber));
 
       while (qiyamAhzab.contains(randomNumber) &&
           qiyamAhzab.length != memorizedAhzab.length) {
@@ -207,16 +189,6 @@ class QiyamService {
     } else {
       randomNumber = Random().nextInt(60) + 1;
     }
-
-    // if (qiyamAhzab.length == hizbsMap.length) {
-    //   showSnackbar(
-    //       context, "لقد تم الإنتهاء من جميع الأحزاب, سيتم البدء من جديد.");
-    //   database.createInitialAhzab();
-    //   database.updateAlAhzab();
-    // }
-
-    print("?????? random choosen : ???");
-    print(randomNumber);
 
     return randomNumber;
   }
