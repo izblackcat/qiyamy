@@ -134,7 +134,7 @@ Before you begin, ensure you have the following installed:
 ### Run the project
 
 5. Ensure that your emulator is launched and run the following command:
-   `bash
-flutter run
-`
+   ```bash
+    flutter run
+   ```
    The app should now build and run on your emulator or physical device. :blush:
