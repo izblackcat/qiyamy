@@ -78,85 +78,29 @@ The app is currently under development, with several core features already imple
 
 ## App Screenshots
 
+## App Screenshots
+
 Here are some screenshots of the app:
 
-<div align="center" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+| ![App icon](screenshots/app_icon.jpg) | ![Splash screen](screenshots/splash_screen.jpg) | ![Main page: Ahzab tab](screenshots/main_page:ahzab_tab.jpg) |
+| :-----------------------------------: | :---------------------------------------------: | :----------------------------------------------------------: |
+|             **App icon**              |                **Splash screen**                |                   **Main page: Ahzab tab**                   |
 
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/app_icon.jpg" alt="app icon" width="200"/>
-    <br>
-    <strong>App icon</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/splash_screen.jpg" alt="splash screen" width="200"/>
-    <br>
-    <strong>Splash screen</strong>
-  </div>
+| ![Main page: Ajza'a tab](screenshots/main_page:ajzaa_tab.jpg) | ![Qiyam page](screenshots/qiyam_page.jpg) | ![Qiyam page: choosing a hizb](screenshots/qiyam_page_choosing.jpg) |
+| :-----------------------------------------------------------: | :---------------------------------------: | :-----------------------------------------------------------------: |
+|                   **Main page: Ajza'a tab**                   |              **Qiyam page**               |                   **Qiyam page: choosing a hizb**                   |
 
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/main_page:ahzab_tab.jpg" alt="Ahzab tab" width="200"/>
-    <br>
-    <strong>Main page: Ahzab tab</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/main_page:ajzaa_tab.jpg" alt="Ajzaa tab" width="200"/>
-    <br>
-    <strong>Main page: Ajza'a tab</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/qiyam_page.jpg" alt="qiyam page" width="200"/>
-    <br>
-    <strong>Qiyam page</strong>
-  </div>
+| ![Qiyam page: After choosing a hizb](screenshots/qiyam_page_after_choose.jpg) | ![Qiyam page: Already chosen hizbs](screenshots/qiyam_page_already_choosen.jpg) | ![Wird page: daily Wird](screenshots/wird_page.jpg) |
+| :---------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: | :-------------------------------------------------: |
+|                     **Qiyam page: After choosing a hizb**                     |                      **Qiyam page: Already chosen hizbs**                       |              **Wird page: daily Wird**              |
 
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/qiyam_page_choosing.jpg" alt="qiyam: choosing a hizb" width="200"/>
-    <br>
-    <strong>Qiyam page: choosing a hizb</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/qiyam_page_after_choose.jpg" alt="qiyam: after choosing" width="200"/>
-    <br>
-    <strong>Qiyam page: After choosing a hizb</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/qiyam_page_already_choosen.jpg" alt="qiyam: already chosen hizbs" width="200"/>
-    <br>
-    <strong>Qiyam page: Already chosen hizbs</strong>
-  </div>
+| ![Wird page: if finish Wird](screenshots/finish_wird.jpg) | ![More page](screenshots/more_page.jpg) | ![Choosing memorized hizbs](screenshots/choose_memorized_hizbs.jpg) |
+| :-------------------------------------------------------: | :-------------------------------------: | :-----------------------------------------------------------------: |
+|               **Wird page: if finish Wird**               |              **More page**              |                    **Choosing memorized hizbs**                     |
 
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/wird_page.jpg" alt="wird page" width="200"/>
-    <br>
-    <strong>Wird page: daily Wird</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/finish_wird.jpg" alt="finish wird" width="200"/>
-    <br>
-    <strong>Wird page: if finish Wird</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/more_page.jpg" alt="more page" width="200"/>
-    <br>
-    <strong>More page</strong>
-  </div>
-
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/choose_memorized_hizbs.jpg" alt="choosing memorized hizbs" width="200"/>
-    <br>
-    <strong>Choosing memorized hizbs</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/choose_memorized_hizbs_1.jpg" alt="choosing memorized hizbs" width="200"/>
-    <br>
-    <strong>Choosing memorized hizbs</strong>
-  </div>
-  <div style="flex: 1 1 200px; text-align: center;">
-    <img src="screenshots/choose_memorized_hizbs_save.jpg" alt="save choices" width="200"/>
-    <br>
-    <strong>Save chosen memorized hizbs</strong>
-  </div>
-</div>
+| ![Choosing memorized hizbs](screenshots/choose_memorized_hizbs_1.jpg) | ![Save chosen memorized hizbs](screenshots/choose_memorized_hizbs_save.jpg) |     |
+| :-------------------------------------------------------------------: | :-------------------------------------------------------------------------: | :-: |
+|                     **Choosing memorized hizbs**                      |                       **Save chosen memorized hizbs**                       |     |
 
 ## 🚀 How to Run Qiymay
 
