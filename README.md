@@ -4,7 +4,7 @@ Qiaymi is a side-project I have had the idea to work for a long time. Finally, I
 
 The idea behind this project is simple: `Keep track of your journey with Holy Quran (القرآن الكريم)`. This includes: Memorization (المراجعة), Daily Wird (الورد اليومي) and Qiyam (القيام). Other use cases may be added later as needed.
 
-## Mockups
+## App Design
 
 The mockups of the app were created using [Figma](https://www.figma.com/) are as follows:
 
@@ -24,37 +24,17 @@ From [Canva Color Palettes](https://www.canva.com/colors/color-palettes/summer-s
 
 </details>
 
-### Splash screen
+### Mockups
 
-Splash screen mockup:
+Here are some mockups of the app:
 
-![Splash screen mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/splashscreen.png?raw=true)
+| ![Splash screen mockup](/mockups/splashscreen.png) | ![Home page mockup](/mockups/homepage.png) | ![Qiyam page mockup](/mockups/qiyampage.png) |
+| :------------------------------------------------: | :----------------------------------------: | :------------------------------------------: |
+|                 **Splash screen**                  |               **Home page**                |                **Qiyam page**                |
 
-### Home page
-
-Home page mockup:
-
-![Home page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/homepage.png?raw=true)
-
-### Qiyam page
-
-Qiyam page mockups:
-
-![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage.png?raw=true)
-
-![Qiyam page mockups](https://github.com/izblackcat/qiyami/blob/main/mockups/qiyampage2.png?raw=true)
-
-### Wird page
-
-Wird page mockup:
-
-![Wird page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/wirdpage.png?raw=true)
-
-### More page
-
-More page mockup:
-
-![More page mockup](https://github.com/izblackcat/qiyami/blob/main/mockups/morepage.png?raw=true)
+| ![Qiyam page mockup 2](/mockups/qiyampage2.png) | ![Wird page mockup](/mockups/wirdpage.png) | ![More page mockup](/mockups/morepage.png) |
+| :---------------------------------------------: | :----------------------------------------: | :----------------------------------------: |
+|               **Qiyam page (2)**                |               **Wird page**                |               **More page**                |
 
 ## Results:
 
