@@ -101,7 +101,7 @@ Before you begin, ensure you have the following installed:
 2. Navigate to the directory where you want to clone the project.
 3. Run the following command to clone the repository and navigate into it:
    ```bash
-   git clone https://github.com/izblackcat/qiyami.git
+   git clone https://github.com/izblackcat/qiyamy.git
    cd qiyamy
    ```
 
